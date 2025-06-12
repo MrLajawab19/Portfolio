@@ -1,0 +1,23 @@
+.thierddiv{
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-flow: row;
+    background-color: rgb(49, 113, 168);
+    width: 90%;
+    height: auto;
+}
+.thierddiv img {
+    height: 100px;
+    width: 100px;
+    display: inline;
+}
+#image{
+    height: 500px;
+    width: 500px;
+}
+.intro{
+    display: inline;
+    margin-left: 700px;
+    justify-items: center;
+}
