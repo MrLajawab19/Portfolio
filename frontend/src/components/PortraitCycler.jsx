@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PROFILE } from "../data/portfolio";
+import halftoneImage from "../assets/Screenshot 2026-07-22 142049.png";
 
 const EFFECTS = [
   { name: "ORIGINAL", cls: "", label: "original photo" },
@@ -20,14 +21,25 @@ export default function PortraitCycler() {
   const current = EFFECTS[idx];
 
   const renderEffect = useMemo(
-    () => (
-      <img
-        alt="Ayush Bardhani"
-        src={PROFILE.profileImage}
-        className={`w-full h-full object-cover ${current.cls}`}
-      />
-    ),
-    [current.cls]
+    () => {
+      if (current.name === "HALFTONE") {
+        return (
+          <img
+            alt="Ayush Bardhani Halftone"
+            src={halftoneImage}
+            className="w-full h-full object-cover"
+          />
+        );
+      }
+      return (
+        <img
+          alt="Ayush Bardhani"
+          src={PROFILE.profileImage}
+          className="w-full h-full object-cover"
+        />
+      );
+    },
+    [current.name]
   );
 
   return (

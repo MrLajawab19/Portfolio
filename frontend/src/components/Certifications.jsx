@@ -23,7 +23,7 @@ export default function Certifications() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className={`grid grid-cols-12 items-center gap-4 px-4 md:px-6 py-4 hover:bg-emergent-elev/60 transition-colors ${
+              className={`grid grid-cols-12 items-center gap-4 px-4 md:px-6 py-4 hover:bg-emergent-elevHover transition-colors ${
                 i < CERTIFICATIONS.length - 1 ? "border-b border-emergent-border" : ""
               }`}
             >

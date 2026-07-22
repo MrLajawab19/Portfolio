@@ -6,10 +6,11 @@ export default {
     extend: {
       colors: {
         emergent: {
-          // Base dark colors - pure black background
+          // Base dark colors - black background with dark grey surfaces
           bg: "#000000",
           surface: "#0a0a0a",
           elev: "#111111",
+          elevHover: "#1a1a1a",
           border: "#2a2a2a",
           text: "#ffffff",
           dim: "#a0a0a0",
@@ -31,13 +32,13 @@ export default {
           warning: "#f59e0b",
           error: "#ef4444",
           
-          // Neutral palette from target site
+          // Neutral palette - dark grey/black
           neutral: {
             dark: {
               "00": "#0a0a0a",
               "04": "#1a1a1a",
-              "05": "#162e6c",
-              "12": "#0d193a",
+              "05": "#1a1a1a",
+              "12": "#0a0a0a",
             },
             light: {
               "00": "#ffffff",

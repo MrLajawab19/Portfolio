@@ -42,7 +42,7 @@ export default function BootSequence({ onComplete = () => {} }) {
       {visible && (
         <motion.div
           data-testid="boot-sequence-overlay"
-          className="fixed inset-0 z-[100] bg-emergent-surface flex items-center justify-center p-6"
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-6"
           initial={{ opacity: 1 }}
           exit={{ y: "-100%", transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }}
         >

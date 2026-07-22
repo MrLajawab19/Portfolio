@@ -165,7 +165,7 @@ export default function Hero() {
             <div
               key={s.label}
               data-testid={`hero-stat-${i}`}
-              className="border border-emergent-border bg-emergent-elev/40 backdrop-blur px-4 py-4 hover:border-emergent-green-base transition-colors group"
+              className="border border-emergent-border bg-emergent-elev/40 backdrop-blur px-4 py-4 hover:border-emergent-green-base hover:bg-emergent-elevHover transition-colors group"
             >
               <div className="font-display font-black text-2xl md:text-3xl text-emergent-text group-hover:text-emergent-green-base transition-colors">
                 {s.value}

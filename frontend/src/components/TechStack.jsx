@@ -55,7 +55,7 @@ export default function TechStack() {
                 hidden: { opacity: 0, y: 12 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.35 } },
               }}
-              className="group aspect-square border border-emergent-border bg-emergent-elev/40 flex flex-col items-center justify-center gap-2 hover:border-emergent-green-base hover:bg-emergent-elev transition-colors relative overflow-hidden"
+              className="group aspect-square border border-emergent-border bg-emergent-elev/40 flex flex-col items-center justify-center gap-2 hover:border-emergent-green-base hover:bg-emergent-elevHover transition-colors relative overflow-hidden"
               data-testid={`tech-${t.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
             >
               <span className="font-display font-black text-2xl text-emergent-text group-hover:text-emergent-green-base transition-colors">

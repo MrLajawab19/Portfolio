@@ -36,7 +36,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className={`group relative overflow-hidden border border-emergent-border bg-emergent-elev/50 hover:bg-emergent-elev transition-colors ${
+                className={`group relative overflow-hidden border border-emergent-border bg-emergent-elev/50 hover:bg-emergent-elevHover transition-colors ${
                   wide ? "md:col-span-8 md:row-span-2" : "md:col-span-4"
                 }`}
                 style={{ ["--accent"]: p.accent }}

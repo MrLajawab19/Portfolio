@@ -25,7 +25,7 @@ function Portfolio() {
   return (
     <div className="relative min-h-screen bg-emergent-bg text-emergent-text overflow-hidden">
       {/* Background effects */}
-      <BackgroundEffects />
+      {/* <BackgroundEffects /> */}
       <MatrixRain />
       <CursorGlow />
       
