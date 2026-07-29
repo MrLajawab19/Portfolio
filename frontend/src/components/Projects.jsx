@@ -37,7 +37,7 @@ export default function Projects() {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
                 className={`group relative overflow-hidden border border-emergent-border bg-emergent-elev/50 hover:bg-emergent-elevHover transition-colors ${
-                  wide ? "md:col-span-8 md:row-span-2" : "md:col-span-4"
+                  wide ? "md:col-span-8 md:row-span-2 flex flex-col" : "md:col-span-4"
                 }`}
                 style={{ ["--accent"]: p.accent }}
               >
@@ -47,7 +47,7 @@ export default function Projects() {
                     style={{ background: p.accent, transitionDuration: "600ms" }}
                   />
                 </div>
-                <div className="p-6 md:p-8">
+                <div className={`p-6 md:p-8 ${wide ? "flex flex-col flex-1" : ""}`}>
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-widest" style={{ color: p.accent }}>
@@ -66,7 +66,21 @@ export default function Projects() {
                     {wide ? p.long : p.description}
                   </p>
 
-                  <div className="mt-5 flex flex-wrap gap-1.5">
+                  {wide && p.highlights?.length > 0 && (
+                    <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 flex-1">
+                      {p.highlights.map((item) => (
+                        <li
+                          key={item}
+                          className="font-mono text-xs text-emergent-dim leading-relaxed flex items-start gap-2"
+                        >
+                          <span className="text-emergent-green-base shrink-0 mt-0.5">▸</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className={`mt-5 flex flex-wrap gap-1.5 ${wide ? "mt-auto pt-5" : ""}`}>
                     {p.stack.map((s) => (
                       <span
                         key={s}
