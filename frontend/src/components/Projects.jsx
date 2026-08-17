@@ -105,24 +105,28 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-6 flex items-center gap-3">
-                    <a
-                      href={p.links.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 font-mono text-xs px-3 py-2 border border-emergent-border text-emergent-text hover:border-emergent-green-base hover:text-emergent-green-base transition-colors"
-                      data-testid={`project-demo-${p.id}`}
-                    >
-                      live_demo <ArrowUpRight className="w-3 h-3" />
-                    </a>
-                    <a
-                      href={p.links.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 font-mono text-xs px-3 py-2 border border-emergent-border text-emergent-text hover:border-emergent-green-base hover:text-emergent-green-base transition-colors"
-                      data-testid={`project-github-${p.id}`}
-                    >
-                      github <Github className="w-3 h-3" />
-                    </a>
+                    {p.links.demo && p.links.demo !== "#" && (
+                      <a
+                        href={p.links.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 font-mono text-xs px-3 py-2 border border-emergent-border text-emergent-text hover:border-emergent-green-base hover:text-emergent-green-base transition-colors"
+                        data-testid={`project-demo-${p.id}`}
+                      >
+                        live_demo <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    )}
+                    {p.links.github && p.links.github !== "#" && (
+                      <a
+                        href={p.links.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 font-mono text-xs px-3 py-2 border border-emergent-border text-emergent-text hover:border-emergent-green-base hover:text-emergent-green-base transition-colors"
+                        data-testid={`project-github-${p.id}`}
+                      >
+                        github <Github className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.article>

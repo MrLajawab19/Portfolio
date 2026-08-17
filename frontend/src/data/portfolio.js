@@ -2,8 +2,8 @@ export const PROFILE = {
   name: "Ayush Bardhani",
   handle: "MrLajawab19",
   leetcode: "Ayush_Bardhani",
-  title: "Full-Stack Developer · AI/ML Engineer · Cloud Enthusiast",
-  location: "Delhi, India",
+  title: "Software Engineer · Backend & AI/ML",
+  location: "New Delhi, India",
   email: "ayushbardhani03119@gmail.com",
   phone: "+91 8126259501",
   socials: {
@@ -14,156 +14,161 @@ export const PROFILE = {
   },
   profileImage:
     "https://customer-assets-gfyr7b9c.emergentagent.net/job_af6c4e3c-3cc8-4e34-98ea-2bf6cc698fac/artifacts/4hhrtuqd_Profile.png",
-  passions: ["Coffee", "Code", "Badminton", "Innovation"],
+  passions: ["Code", "AI/ML", "Backend", "Cloud"],
   bio:
-    "Computer Science student specializing in AI & ML, passionate about creating technology that makes a difference. I build full-stack apps, ship AI-powered systems, and swing rackets in my off-hours.",
-  chips: ["Problem Solver", "Team Player", "Quick Learner", "Product Builder"],
+    "Software engineer focused on developing full-stack applications, secure REST APIs, and production-deployed systems. I apply Python-based machine learning and deep learning alongside LLM APIs to ship AI-powered features.",
+  chips: ["Full-Stack", "AI/ML", "DSA", "Cloud Architecture"],
   timeline: [
-    { year: "2023", event: "Started B.Tech at ABES Engineering College" },
-    { year: "2024", event: "Built first major ML project (TrackAI)" },
-    { year: "2024", event: "AWS Certified · DSA Journey Started" },
-    { year: "2025", event: "Building ScrowX & Cloud Cost System" },
-    { year: "2025", event: "Gold Medalist Badminton (URJA)" },
-    { year: "2026", event: "Target: Hackathons, Research & Internships" },
-    { year: "2027", event: "Graduate → Build Something Big!" },
+    { year: "2023", event: "Started B.Tech (AI & ML) at ABES Engineering College" },
+    { year: "2024", event: "Built TrackAI & Stellaris (MLH Hackathon Finalist)" },
+    { year: "2024", event: "Promotional Head at Trishul ABESEC" },
+    { year: "2025", event: "Shipped ScrowX & AWS Cloud Cost Management System" },
+    { year: "2027", event: "Expected Graduation" },
   ],
 };
 
 export const STATS = [
-  { value: "200+", label: "LeetCode Problems", icon: "code" },
-  { value: "3+", label: "Major Projects", icon: "layers" },
-  { value: "AWS", label: "Cloud Certified", icon: "cloud" },
-  { value: "GOLD", label: "Badminton Champion", icon: "trophy" },
-  { value: "2027", label: "Graduating", icon: "zap" },
+  { value: "200+", label: "DSA Problems", icon: "code" },
+  { value: "4+", label: "Major Projects", icon: "layers" },
+  { value: "AWS", label: "Academy Certified", icon: "cloud" },
+  { value: "Finalist", label: "Stellaris MLH", icon: "trophy" },
+  { value: "7.64", label: "CGPA", icon: "zap" },
 ];
 
 export const PROJECTS = [
   {
     id: "scrowx",
     name: "ScrowX",
-    tagline: "Trust Infrastructure for Informal Micro-Transactions",
-    status: "MVP LIVE",
+    tagline: "Secure Payment Infrastructure Layer For Informal Transactions",
+    status: "LIVE",
     year: "2025",
     description:
-      "Digital notary and escrow layer for freelance and peer-to-peer deals under $50 — locks funds via Razorpay, seals agreements as digital deeds, and resolves disputes with AI arbitration in under 48 hours.",
+      "Architected a secure payment infrastructure layer with an escrow engine, enforcing atomic fund lock/release via Prisma transactions.",
     long:
-      "Built a cryptographically sealed trust workflow for informal transactions with no paper trail and no court recourse. Buyers lock funds in escrow; both parties sign digital deeds with OTP; deliverables and formal notices are recorded in an immutable audit ledger. Disputes go to a GPT-4o arbitration engine with fraud detection and behavioral risk scoring — verdicts execute fund release or refund automatically.",
+      "Built an AI-powered dispute arbitration engine (Google Gemini) that analyzes evidence and behavioral risk signals, with auto-escalation to human review. Deployed a full-stack system: React/Vite, Express + Socket.IO, PostgreSQL/Prisma, JWT auth, and an AI support assistant.",
     stack: [
       "React",
-      "Vite",
-      "Tailwind",
       "Node.js",
       "Express",
       "Socket.io",
       "PostgreSQL",
       "Prisma",
-      "OpenAI",
       "Razorpay",
+      "Gemini",
     ],
     metrics: [
-      { k: "<48h", v: "AI Arbitration" },
-      { k: "7 Days", v: "Review Window" },
+      { k: "AI", v: "Arbitration" },
       { k: "100%", v: "Audit Ledger" },
+      { k: "Live", v: "Chat" },
     ],
     highlights: [
-      "Razorpay escrow — funds locked until delivery or verdict",
-      "Digital deeds signed via OTP with milestone support",
-      "Immutable audit ledger with chained, hashed entries",
-      "GPT-4o arbitration resolves disputes in under 48 hours",
-      "Formal notice system replaces unstructured chat",
-      "One-time KYC + behavioral risk scoring for fraud deterrence",
+      "Escrow engine enforcing atomic fund lock/release",
+      "Append-only wallet ledger for tamper-evident history",
+      "AI-powered dispute arbitration engine with multi-round logic",
+      "Real-time chat and KYC gating",
     ],
-    links: { demo: "#", github: "https://github.com/MrLajawab19" },
+    links: { demo: "https://scrowx.netlify.app/", github: "https://github.com/MrLajawab19/Escrow" },
     accent: "#39d353",
   },
   {
     id: "aws-finops",
-    name: "AWS Cloud Cost Management",
-    tagline: "FinOps System",
+    name: "AWS Cloud Cost Management System",
+    tagline: "FinOps Tool",
     status: "LIVE",
     year: "2025",
     description:
-      "ML-powered cloud cost optimization with real-time monitoring, forecasting, and automated idle resource detection across EC2, S3, RDS, Lambda.",
+      "Built a full-stack finance tool to track live AWS usage/spend across EC2, S3, RDS, and Lambda via Boto3, with automated cost breakdowns.",
     long:
-      "Full FinOps stack — FastAPI + React (Vite), live AWS resource ingestion via Boto3, Fernet-encrypted credentials, JWT auth, per-user isolated pipelines, and scikit-learn polynomial regression forecasting 30-day cloud spend with R² validation.",
-    stack: ["Python", "FastAPI", "React", "Vite", "Scikit-learn", "Boto3", "AWS"],
+      "Implemented JWT auth with Fernet-encrypted credential storage for isolated multi-account monitoring. Built a cost-forecasting module (scikit-learn polynomial regression) and CloudWatch-based idle-resource detection with cost-ranked cleanup recommendations refreshed every 6 hours.",
+    stack: ["Python", "FastAPI", "React", "Scikit-learn", "Boto3", "Docker", "SQLite", "AWS"],
     metrics: [
-      { k: "30%", v: "Avg Cost Savings" },
-      { k: "85%", v: "Prediction Accuracy" },
+      { k: "R²", v: "Validation" },
+      { k: "6h", v: "Refresh Rate" },
       { k: "Live", v: "Monitoring" },
     ],
-    links: { demo: "#", github: "https://github.com/MrLajawab19" },
+    links: { github: "https://github.com/MrLajawab19/Cloud-Cost-Management" },
     accent: "#58a6ff",
   },
   {
     id: "trackai",
     name: "TrackAI",
-    tagline: "AI-Powered Railway Traffic",
+    tagline: "Railway Traffic Data Pipeline & Delay Prediction",
     status: "AI/ML",
     year: "2024",
     description:
-      "Train delay prediction with 85%+ accuracy using ensemble learning on real-world railway datasets. Visualization dashboards optimize scheduling.",
+      "Built an end-to-end data pipeline to clean, engineer features from, and model large-scale railway traffic data.",
     long:
-      "ML pipelines with k-fold CV and hyperparameter tuning. Congestion & seasonal delay pattern detection across intercity/suburban routes. Matplotlib dashboards for KPI monitoring and route optimization.",
+      "Trained delay-prediction models (85%+ accuracy) via k-fold cross-validation and hyperparameter tuning; built Matplotlib dashboards surfacing congestion hotspots and delay trends for timetable optimization.",
     stack: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
     metrics: [
-      { k: "85%", v: "Accuracy" },
-      { k: "10K+", v: "Data Points" },
-      { k: "Live", v: "Dashboard" },
+      { k: "85%+", v: "Accuracy" },
+      { k: "k-fold", v: "Cross-Val" },
+      { k: "Trends", v: "Dashboard" },
     ],
-    links: { demo: "#", github: "https://github.com/MrLajawab19" },
+    links: { github: "https://github.com/MrLajawab19/TRack-AI" },
     accent: "#d29922",
   },
   {
-    id: "stellaris",
-    name: "Stellaris",
-    tagline: "MLH Hackathon Project",
-    status: "HACKATHON",
+    id: "creditwise",
+    name: "CreditWise",
+    tagline: "Loan Approval Prediction",
+    status: "NOTEBOOK",
     year: "2024",
-    description:
-      "Dispute resolution system for informal transactions in content/blog writing. Built end-to-end during a Major League Hacking event.",
-    long: "Rapid MVP for informal transaction disputes — mediator flow, evidence uploads, and AI-summarised resolution memos.",
-    stack: ["React", "Node.js", "Express", "MongoDB"],
+    description: "Supervised machine learning notebook for loan approval prediction achieving 87.5% accuracy.",
+    long: "Compared Logistic Regression, KNN, and Naive Bayes on 1,000 applicants. Reached 87.5% accuracy and 0.80 F1-score after feature engineering.",
+    stack: ["Python", "Scikit-learn", "Pandas", "NumPy"],
     metrics: [
-      { k: "48h", v: "Build Time" },
-      { k: "MLH", v: "Hackathon" },
-      { k: "AI", v: "Assisted" },
+      { k: "87.5%", v: "Accuracy" },
+      { k: "0.80", v: "F1-Score" },
+      { k: "1K", v: "Applicants" },
     ],
-    links: { demo: "#", github: "https://github.com/MrLajawab19" },
+    links: { github: "https://github.com/MrLajawab19/creditwise-loan-approval-ml" },
     accent: "#f85149",
+  },
+  {
+    id: "smartcart",
+    name: "SmartCart",
+    tagline: "Customer Segmentation",
+    status: "NOTEBOOK",
+    year: "2024",
+    description: "Unsupervised machine learning notebook segmenting 2,240 e-commerce customers into actionable groups.",
+    long: "Applied PCA and K-Means/Agglomerative clustering (elbow method + silhouette scoring) to segment 2,240 e-commerce customers into 4 groups by income, spend, and channel behavior.",
+    stack: ["Python", "Scikit-learn", "Clustering", "PCA"],
+    metrics: [
+      { k: "4", v: "Segments" },
+      { k: "2.2K", v: "Customers" },
+      { k: "PCA", v: "Reduction" },
+    ],
+    links: { github: "https://github.com/MrLajawab19/smartcart-customer-segmentation" },
+    accent: "#a371f7",
   },
 ];
 
 export const TECH_STACK = [
-  { name: "React", cat: "Frontend", icon: "react" },
+  { name: "Java", cat: "Backend", icon: "java" },
   { name: "JavaScript", cat: "Frontend", icon: "js" },
-  { name: "Tailwind", cat: "Frontend", icon: "tailwind" },
-  { name: "Vite", cat: "Frontend", icon: "vite" },
-  { name: "Recharts", cat: "Frontend", icon: "chart" },
+  { name: "Python", cat: "Backend", icon: "python" },
+  { name: "React", cat: "Frontend", icon: "react" },
   { name: "Node.js", cat: "Backend", icon: "node" },
   { name: "Express", cat: "Backend", icon: "express" },
+  { name: "Django", cat: "Backend", icon: "django" },
   { name: "FastAPI", cat: "Backend", icon: "fastapi" },
-  { name: "Java", cat: "Backend", icon: "java" },
-  { name: "Python", cat: "Backend", icon: "python" },
-  { name: "PostgreSQL", cat: "Backend", icon: "postgres" },
-  { name: "Prisma", cat: "Backend", icon: "prisma" },
-  { name: "JWT", cat: "Backend", icon: "jwt" },
-  { name: "NumPy", cat: "AI/ML", icon: "numpy" },
-  { name: "Pandas", cat: "AI/ML", icon: "pandas" },
+  { name: "PostgreSQL", cat: "Database", icon: "postgres" },
+  { name: "MongoDB", cat: "Database", icon: "mongo" },
+  { name: "MySQL", cat: "Database", icon: "mysql" },
+  { name: "SQLite", cat: "Database", icon: "sqlite" },
+  { name: "AWS", cat: "Cloud", icon: "aws" },
+  { name: "Docker", cat: "DevOps", icon: "docker" },
+  { name: "GitHub Actions", cat: "DevOps", icon: "github" },
   { name: "Scikit-learn", cat: "AI/ML", icon: "sklearn" },
+  { name: "TensorFlow", cat: "AI/ML", icon: "tensorflow" },
+  { name: "Pandas", cat: "AI/ML", icon: "pandas" },
+  { name: "NumPy", cat: "AI/ML", icon: "numpy" },
   { name: "OpenAI", cat: "AI/ML", icon: "openai" },
   { name: "Gemini", cat: "AI/ML", icon: "gemini" },
-  { name: "Claude", cat: "AI/ML", icon: "claude" },
-  { name: "AWS", cat: "Cloud", icon: "aws" },
-  { name: "EC2", cat: "Cloud", icon: "ec2" },
-  { name: "S3", cat: "Cloud", icon: "s3" },
-  { name: "Docker", cat: "Cloud", icon: "docker" },
+  { name: "Prisma", cat: "Backend", icon: "prisma" },
   { name: "Vercel", cat: "Cloud", icon: "vercel" },
   { name: "Railway", cat: "Cloud", icon: "railway" },
-  { name: "Git", cat: "Tools", icon: "git" },
-  { name: "GitHub", cat: "Tools", icon: "github" },
-  { name: "Postman", cat: "Tools", icon: "postman" },
-  { name: "VS Code", cat: "Tools", icon: "vscode" },
 ];
 
 export const CERTIFICATIONS = [
@@ -177,19 +182,18 @@ export const CERTIFICATIONS = [
 
 export const IDE_CODE = `// what drives me
 const ayush = {
-  education: "B.Tech CSE (AI/ML)",
-  location: "India",
-  passion: ["AI/ML", "System Design",
-    "Web Dev", "Cloud", "Problem Solving"],
-  currentlyLearning: ["LLMs", "MLOps", "DSA++"],
-  dream: "Build scalable, impactful
-    products and a global startup"
+  title: "Software Engineer | Backend & AI/ML",
+  location: "New Delhi, India",
+  skills: ["Python", "Java", "Node.js", "React", "AWS", "ML/DL"],
+  coreCS: ["DSA", "OOP", "DBMS", "System Design"],
+  education: "B.Tech CSE (AI/ML) @ ABESEC",
+  goals: "Build scalable, intelligent systems"
 };
 
 while (learning) {
   code();
   build();
-  playBadminton();
-  read();
+  optimize();
+  deploy();
   repeat();
 }`;

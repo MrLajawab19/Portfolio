@@ -25,15 +25,17 @@ export default function Stats() {
   const [grid] = useState(makeGrid());
 
   useEffect(() => {
-    if (!API) return;
-    axios.get(`${API}/leetcode/${PROFILE.leetcode}`).then((r) => setLc(r.data)).catch(() => {});
-    axios.get(`${API}/github/${PROFILE.handle}`).then((r) => setGh(r.data)).catch(() => {});
+    const lcUrl = API ? `${API}/leetcode/${PROFILE.leetcode}` : `https://alfa-leetcode-api.onrender.com/${PROFILE.leetcode}`;
+    const ghUrl = API ? `${API}/github/${PROFILE.handle}` : `https://api.github.com/users/${PROFILE.handle}`;
+    
+    axios.get(lcUrl).then((r) => setLc(r.data)).catch(() => {});
+    axios.get(ghUrl).then((r) => setGh(r.data)).catch(() => {});
   }, []);
 
-  const total = lc?.total_solved || 217;
-  const easy = lc?.easy || 92;
-  const medium = lc?.medium || 91;
-  const hard = lc?.hard || 34;
+  const total = lc?.total_solved || lc?.totalSolved || 217;
+  const easy = lc?.easy || lc?.easySolved || 92;
+  const medium = lc?.medium || lc?.mediumSolved || 91;
+  const hard = lc?.hard || lc?.hardSolved || 34;
   const maxEasy = 850, maxMed = 1800, maxHard = 800;
 
   return (
@@ -73,7 +75,7 @@ export default function Stats() {
 
             <div className="grid grid-cols-3 gap-3 mb-6">
               <StatTile label="Solved" value={total} suffix="+" testid="lc-solved" />
-              <StatTile label="Contest Rating" value={lc?.contest_rating || 1650} testid="lc-rating" />
+              <StatTile label="Contest Rating" value={lc?.contest_rating || lc?.rating || 1650} testid="lc-rating" />
               <StatTile label="Top %" value={lc?.top_percentage || 18} suffix="%" testid="lc-top" />
             </div>
 

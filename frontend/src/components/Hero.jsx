@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, Twitter, Code2 } from "lucide-react";
 import { PROFILE, STATS } from "../data/portfolio";
@@ -13,6 +14,18 @@ const line = {
 };
 
 export default function Hero() {
+  const [dynamicLc, setDynamicLc] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://alfa-leetcode-api.onrender.com/${PROFILE.leetcode}/solved`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.solvedProblem) {
+          setDynamicLc(data.solvedProblem);
+        }
+      })
+      .catch((err) => console.error("Failed to fetch LeetCode stats", err));
+  }, []);
   return (
     <section id="home" data-testid="hero-section" className="relative pt-28 md:pt-32 pb-16 overflow-hidden">
       {/* subtle grid + noise */}
@@ -161,20 +174,25 @@ export default function Hero() {
           transition={{ delay: 3.8, duration: 0.7 }}
           className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-3"
         >
-          {STATS.map((s, i) => (
-            <div
-              key={s.label}
-              data-testid={`hero-stat-${i}`}
-              className="border border-emergent-border bg-emergent-elev/40 backdrop-blur px-4 py-4 hover:border-emergent-green-base hover:bg-emergent-elevHover transition-colors group"
-            >
-              <div className="font-display font-black text-2xl md:text-3xl text-emergent-text group-hover:text-emergent-green-base transition-colors">
-                {s.value}
+          {STATS.map((s, i) => {
+            const isLeetCode = s.label.includes("DSA Problems");
+            const displayValue = isLeetCode && dynamicLc ? `${dynamicLc}+` : s.value;
+
+            return (
+              <div
+                key={s.label}
+                data-testid={`hero-stat-${i}`}
+                className="border border-emergent-border bg-emergent-elev/40 backdrop-blur px-4 py-4 hover:border-emergent-green-base hover:bg-emergent-elevHover transition-colors group"
+              >
+                <div className="font-display font-black text-2xl md:text-3xl text-emergent-text group-hover:text-emergent-green-base transition-colors">
+                  {displayValue}
+                </div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-emergent-dim mt-1">
+                  {s.label}
+                </div>
               </div>
-              <div className="font-mono text-[10px] uppercase tracking-widest text-emergent-dim mt-1">
-                {s.label}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>

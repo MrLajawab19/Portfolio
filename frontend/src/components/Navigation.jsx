@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import resumePdf from "../assets/Ayush_Bardhani.pdf";
 
 const NAV = [
   { label: "Home", href: "#home" },
@@ -68,7 +69,7 @@ export default function Navigation() {
           </div>
           <a
             data-testid="nav-resume"
-            href="https://customer-assets-lqy194kg.emergentagent.net/job_dev-gallery-55/artifacts/3nd0uk7x_Ayush_Bardhani_Resume.pdf"
+            href={resumePdf}
             target="_blank"
             rel="noreferrer"
             className="text-xs font-mono px-3 py-1.5 border border-emergent-green-base text-emergent-green-base hover:bg-emergent-green-base hover:text-emergent-surface transition-colors"
